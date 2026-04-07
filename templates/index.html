@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+  <head>
+    <title>YT to MP3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        .ibm-plex-mono-thin {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.ibm-plex-mono-extralight {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.ibm-plex-mono-light {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ibm-plex-mono-regular {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-mono-medium {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ibm-plex-mono-semibold {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.ibm-plex-mono-bold {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ibm-plex-mono-thin-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.ibm-plex-mono-extralight-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.ibm-plex-mono-light-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ibm-plex-mono-regular-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ibm-plex-mono-medium-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ibm-plex-mono-semibold-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.ibm-plex-mono-bold-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
+      body {
+  font-family: "IBM Plex Mono", monospace;
+        background: #121212;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px; 
+        box-sizing: border-box;
+      }
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 450px; 
+      }
+      .container {
+        background: #1e1e1e;
+        padding: 40px 20px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        width: 100%;
+        box-sizing: border-box;
+      }
+      h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+      input {
+        width: 100%; 
+        max-width: 300px;
+        padding: 12px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      button {
+        background: #730606;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        width: 100%;
+        max-width: 300px;
+      }
+      button:hover {
+        background: #490b0b;
+      }
+      #loader {
+        display: none;
+        margin-top: 20px;
+        color: #aaa;
+      }
+      .footer-text {
+        margin-top: 20px;
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.2rem;
+        }
+        .container {
+          padding: 30px 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <h1>Youtube Video to MP3 Converter :D</h1>
+        <p>Paste YouTube URL to download MP3</p>
+        <br>
+        <form action="/convert" method="POST" onsubmit="showLoader()">
+          <input
+            type="text"
+            name="url"
+            placeholder="https://youtube.com/watch?v=..."
+            required
+            style="font-family: IBM Plex Mono, monospace;"
+          /><br />
+          <button type="submit" style="font-family: IBM Plex Mono, monospace;">Download MP3</button>
+        </form>
+        <div id="loader">Processing... this may take a minute.</div>
+      </div>
+      
+      <p class="footer-text">Developed By @ruh.alfarasha</p>
+    </div>
+
+    <script>
+      function showLoader() {
+        document.getElementById("loader").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
